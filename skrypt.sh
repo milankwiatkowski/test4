@@ -40,27 +40,63 @@ do
                 ((suma+=i))
             done
             echo "Suma liczb od 1 do $N wynosi: $suma"
-            ;;
+            echo " "
+	    echo "1)Obliczenie sumy liczb od 1 do N"
+echo "2)Odczytanie i wyświetlenie zawartości pliku w odwrotnej kolejności"
+echo "3)Sprawdzenie, czy podana ścieżka jest katalogiem czy plikiem"
+echo "4)Zliczenie liczby plików i katalogów"
+echo "5)Wyjscie"
+	    ;;
         "Odczytanie i wyświetlenie zawartości pliku w odwrotnej kolejności")
             read -p "Podaj nazwę pliku: " plik
             if [ -f "$plik" ]; then
-                tac "$plik"
-            else
+                cat $plik | rev
+echo "1)Obliczenie sumy liczb od 1 do N"
+echo "2)Odczytanie i wyświetlenie zawartości pliku w odwrotnej kolejności"
+echo "3)Sprawdzenie, czy podana ścieżka jest katalogiem czy plikiem"
+echo "4)Zliczenie liczby plików i katalogów"
+echo "5)Wyjscie"            
+else
                 echo "Podany argument '$plik' nie jest plikiem."
-            fi
+echo "1)Obliczenie sumy liczb od 1 do N"
+echo "2)Odczytanie i wyświetlenie zawartości pliku w odwrotnej kolejności"
+echo "3)Sprawdzenie, czy podana ścieżka jest katalogiem czy plikiem"
+echo "4)Zliczenie liczby plików i katalogów"
+echo "5)Wyjscie"            
+fi
             ;;
         "Sprawdzenie, czy podana ścieżka jest katalogiem czy plikiem")
             read -p "Podaj ścieżkę: " sciezka
             if [ -e "$sciezka" ]; then
                 if [ -d "$sciezka" ]; then
                     echo "Podana ścieżka '$sciezka' jest katalogiem."
-                elif [ -f "$sciezka" ]; then
+echo "1)Obliczenie sumy liczb od 1 do N"
+echo "2)Odczytanie i wyświetlenie zawartości pliku w odwrotnej kolejności"
+echo "3)Sprawdzenie, czy podana ścieżka jest katalogiem czy plikiem"
+echo "4)Zliczenie liczby plików i katalogów"
+echo "5)Wyjscie"                
+elif [ -f "$sciezka" ]; then
                     echo "Podana ścieżka '$sciezka' jest plikiem."
-                else
-                    echo "Podana ścieżka '$sciezka' jest innym rodzajem pliku."
+echo "1)Obliczenie sumy liczb od 1 do N"
+echo "2)Odczytanie i wyświetlenie zawartości pliku w odwrotnej kolejności"
+echo "3)Sprawdzenie, czy podana ścieżka jest katalogiem czy plikiem"
+echo "4)Zliczenie liczby plików i katalogów"
+echo "5)Wyjscie"                
+else
+echo "1)Obliczenie sumy liczb od 1 do N"
+echo "2)Odczytanie i wyświetlenie zawartości pliku w odwrotnej kolejności"
+echo "3)Sprawdzenie, czy podana ścieżka jest katalogiem czy plikiem"
+echo "4)Zliczenie liczby plików i katalogów"
+echo "5)Wyjscie"                
+    echo "Podana ścieżka '$sciezka' jest innym rodzajem pliku."
                 fi
             else
-                echo "Podana ścieżka '$sciezka' nie istnieje."
+                
+echo "1)Obliczenie sumy liczb od 1 do N"
+echo "2)Odczytanie i wyświetlenie zawartości pliku w odwrotnej kolejności"
+echo "3)Sprawdzenie, czy podana ścieżka jest katalogiem czy plikiem"
+echo "4)Zliczenie liczby plików i katalogów"
+echo "5)Wyjscie"echo "Podana ścieżka '$sciezka' nie istnieje."
             fi
             ;;
         "Zliczenie liczby plików i katalogów")
@@ -68,12 +104,22 @@ do
             liczba_katalogow=$(find . -maxdepth 1 -type d | wc -l)
             echo "Liczba plików: $liczba_plikow"
             echo "Liczba katalogów: $liczba_katalogow"
-            ;;
+echo "1)Obliczenie sumy liczb od 1 do N"
+echo "2)Odczytanie i wyświetlenie zawartości pliku w odwrotnej kolejności"
+echo "3)Sprawdzenie, czy podana ścieżka jest katalogiem czy plikiem"
+echo "4)Zliczenie liczby plików i katalogów"
+echo "5)Wyjscie"            
+;;
         "Wyjście")
             break
             ;;
         *) 
             echo "Nieprawidłowa opcja"
+echo "1)Obliczenie sumy liczb od 1 do N"
+echo "2)Odczytanie i wyświetlenie zawartości pliku w odwrotnej kolejności"
+echo "3)Sprawdzenie, czy podana ścieżka jest katalogiem czy plikiem"
+echo "4)Zliczenie liczby plików i katalogów"
+echo "5)Wyjscie"
             ;;
     esac
 done
